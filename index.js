@@ -20,7 +20,7 @@ app.get("/", (req, res) => {
 
 // const CONNECTION_URL =
 //   "mongodb+srv://memories:memories@cluster0.mrtz3.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-const PORT = process.env.PORT || 5000;
+// const PORT = process.env.PORT || 5000;
 
 mongoose
   .connect(process.env.CONNECTION_URL, {
@@ -28,7 +28,7 @@ mongoose
     useUnifiedTopology: true,
   })
   .then(() =>
-    app.listen(PORT, () =>
+    app.listen(process.env.PORT, () =>
       console.log(`Server Running on Port: http://localhost:${PORT}`)
     )
   )
